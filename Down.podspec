@@ -9,15 +9,18 @@ Pod::Spec.new do |spec|
   spec.source_files = "Sources/Down/{AST,Enums & Options,Extensions,Renderers}/**/*.swift", "Sources/cmark/*.{h,c}", "Sources/Down/*"
   spec.ios.source_files = "Sources/Down/Views/**"
   spec.osx.source_files = "Sources/Down/Views/**"
+  spec.watchos.source_files = "Sources/Down/Views/**"
   spec.public_header_files = "Sources/Down/*.h"
   spec.ios.deployment_target = "9.0"
   spec.tvos.deployment_target = "9.0"
   spec.osx.deployment_target = "10.11"
+  spec.watchos.deployment_target = "7.0"
   spec.requires_arc = true
   spec.module_name = "Down"
   spec.preserve_paths = "Sources/cmark/include/module.modulemap", "Sources/cmark/*.inc", "Sources/cmark/COPYING"
   spec.pod_target_xcconfig = { 'SWIFT_INCLUDE_PATHS' => '$(SRCROOT)/Down/Sources/cmark/**' }
   spec.ios.resource = 'Sources/Down/Resources/DownView.bundle'
   spec.osx.resource = 'Sources/Down/Resources/DownView.bundle'
+  spec.watchos.resource = 'Sources/Down/Resources/DownView.bundle'
   spec.swift_versions = ['5.0', '5.1']
 end
